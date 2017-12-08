@@ -1,0 +1,9 @@
+#!/bin/bash
+
+python hgt.py --pop_size=80 --aa_number=20 --codon_number=64 --time_steps=15000
+
+cat data_hgt.txt | tr -d "\n" | tr "]" "\n" | tr -d "[" | tr -s " " | tr " " "," | cut -d, -f2-83 > datahgt.txt
+
+#python hgt.py --pop_size=80 --aa_number=2 --codon_number=4 --time_steps=15000 --hgt="False"
+
+cat data_nohgt.txt | tr -d "\n" | tr "]" "\n" | tr -d "[" | tr -s " " | tr " " "," | cut -d, -f2-83 > datanohgt.txt 
